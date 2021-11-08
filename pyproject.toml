@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tidy"
+version = "0.1.0"
+description = ""
+authors = ["Bar Hochman <bhochman@paloaltonetworks.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+ansible = "^4.8.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+ansible-lint = "^5.2.1"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
