@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars_prompt:
+    - name: ansible_password
+      prompt: "Enter your Mac password"
+      private: yes
+
+  vars:
+    - ansible_become_pass: "{{ ansible_password }}"
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      homebrew_installed_packages: ['nvm', 'pyenv', 'pipenv', 'goenv', 'git', 'zsh']
+    - role: geerlingguy.mac.homebrew
+      ignore_errors: yes
+      homebrew_cask_apps: ['iterm2', 'docker', 'google-chrome', 'visual-studio-code']
